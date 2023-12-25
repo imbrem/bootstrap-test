@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<!--TODO: make text bigger, less detail-->
+<!--TODO: add space for graphics; make it SVG?-->
+
 <body class="main-content w-100 d-flex mx-auto flex-column text-white bg-dark">
     <!-- Floating header w/ buy tickets button -->
     <nav class="row align-items-center py-3">
@@ -32,7 +35,7 @@
                     Jan 3 • Andúnië • Númenor
                 </div>
                 <div class="col">
-                    <a href="#" , class="btn btn-lg btn-secondary fw-bold border-white bg-white">
+                    <a href="#tickets-section" , class="btn btn-lg btn-secondary fw-bold border-white bg-white">
                         Get ticket ⟶
                     </a>
                 </div>
@@ -50,7 +53,7 @@
         </div>
         <!--TODO: put banner behind this, make it fancy-->
         <div class="py-3">
-            <a href="#" , class="btn btn-lg btn-secondary fw-bold border-white bg-white">
+            <a href="#tickets-section" , class="btn btn-lg btn-secondary fw-bold border-white bg-white">
                 Tickets ⟶
             </a>
         </div>
@@ -142,10 +145,18 @@
         laborum.
     </p>
     <!-- Tickets -->
-    <h1>Tickets</h1>
-    <p>
-        3 kinds of ticket in a table, with buttons to buy them. Stacked on mobile, horizontal on desktop.
-    </p>
+    <a id="tickets-section"><h1>Tickets</h1></a>
+    <div class="row align-items-center py-3">
+        <div class="col">
+            <img src="blank.svg" class="img-fluid logo" alt="Logo 1">
+        </div>
+        <div class="col">
+            <img src="blank.svg" class="img-fluid logo" alt="Logo 2">
+        </div>
+        <div class="col">
+            <img src="blank.svg" class="img-fluid logo" alt="Logo 3">
+        </div>
+    </div>
     <!-- People attending -->
     <h1>Confirmed and Past Speakers</h1>
     <!--TODO: change class here from "logo" to "portrait" or smt-->
@@ -184,39 +195,47 @@
             <img src="blank.svg" class="img-fluid logo" alt="Logo 6">
         </div>
     </div>
-    <!--TODO: make this into an actual table-->
-    <div class="row align-items-center py-3">
-        <div class="col-8">
-            Time 1 - Time 2: Thing 1
-        </div>
-        <div class="col-4">
-            Place 1
-        </div>
-    </div>
-    <div class="row align-items-center py-3">
-        <div class="col-8">
-            Time 3 - Time 4: Thing 2
-        </div>
-        <div class="col-4">
-            Place 2
-        </div>
-    </div>
-    <div class="row align-items-center py-3">
-        <div class="col-8">
-            Time 5 - Time 6: Thing 3
-        </div>
-        <div class="col-4">
-            Place 3
-        </div>
-    </div>
-    <div class="row align-items-center py-3">
-        <div class="col-8">
-            Time 7 - Time 8: Thing 4
-        </div>
-        <div class="col-4">
-            Place 4
-        </div>
-    </div>
+    <table class="table table-striped table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Event</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>00:00-02:00</td>
+                <th scope="row">Event 1</th>
+                <td>Forostar</td>
+            </tr>
+            <tr>
+                <td>02:00-04:00</td>
+                <th scope="row">Event 2</th>
+                <td>Andustar</td>
+            </tr>
+            <tr>
+                <td>04:00-06:00</td>
+                <th scope="row">Event 3</th>
+                <td>Hyarnustar</td>
+            </tr>
+            <tr>
+                <td>06:00-08:00</td>
+                <th scope="row">Event 4</th>
+                <td>Hyarrostar</td>
+            </tr>
+            <tr>
+                <td>08:00-10:00</td>
+                <th scope="row">Event 5</th>
+                <td>Orrostar</td>
+            </tr>
+            <tr>
+                <td>10:00-12:00</td>
+                <th scope="row">Event 6</th>
+                <td>Mittalmar</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
