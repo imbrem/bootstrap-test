@@ -1,0 +1,21 @@
+.event-title {
+    font-size: 8em;
+}
+
+.main-content {
+    max-width: 60em;
+}
+
+.logo {
+    border-radius: 5px;
+    display: block;
+    background-color: rgb(184, 211, 175);
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #333;
+    text-shadow: none;
+    /* Prevent inheritance from `body` */
+}
