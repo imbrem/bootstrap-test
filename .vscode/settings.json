@@ -1,0 +1,6 @@
+{
+    "css.lint.validProperties": [
+        "mso-line-height-rule",
+        "mso-hide"
+    ]
+}
