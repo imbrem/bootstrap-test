@@ -17,6 +17,26 @@
 
         gtag('config', 'G-GVCVVE5BNQ');
     </script>
+    <!-- Signin with Google -->
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "1062752798740-gjba79mi7bnh6jm58kdeffl7cjj21af0.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("googleSigninButtonDiv"),
+                // Customization attributes
+                { theme: "filled_black", size: "large", shape: "pill", text: "signin" }
+            );
+            // google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+    </script>
 </head>
 
 <body class="main-content w-100 d-flex mx-auto flex-column text-white bg-dark p-3">
@@ -176,7 +196,15 @@
     </hr>
     <!-- Tickets -->
     <a id="tickets-section">
-        <h1>Tickets</h1>
+        <div class="row align-items-center py-3">
+            <div class="col">
+                <!--TODO: make this into a button?-->
+                <h1>Tickets</h1>
+            </div>
+            <div class="col">
+                <div id="googleSigninButtonDiv" class="float-end"></div>
+            </div>
+        </div>
     </a>
     <div class="row align-items-top py-3">
         <div class="col-md">
@@ -191,15 +219,13 @@
             <ul>
                 <li><strong>Fees:</strong> 1.5% + 20p (2.5% + EU)</li>
                 <li>They e-mail a <a
-                href="https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xT01UZUdINHh2enBueXdTKJqWq6wGMgbkClothE86LBbPhfeZrdGaAip6Qn6-MNSiXozx5ZdeTx0kSJCYoeKaZE7zMhgShMDNegsf">receipt</a>
-                to attendees</li>
-                <li>Check in: receipt # sheet, or custom</li>
+                        href="https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xT01UZUdINHh2enBueXdTKJqWq6wGMgbkClothE86LBbPhfeZrdGaAip6Qn6-MNSiXozx5ZdeTx0kSJCYoeKaZE7zMhgShMDNegsf">receipt</a>
+                    to attendees</li>
+                <li>Check in: receipt # sheet, or custom implementation</li>
             </ul>
             <div class="row align-items-center p-2">
                 <div class="col">
-                    <a
-                    href="https://book.stripe.com/5kA28cdNEdSC5ZS6op"
-                    class="btn btn-lg btn-secondary fw-bold border-white
+                    <a href="https://book.stripe.com/5kA28cdNEdSC5ZS6op" class="btn btn-lg btn-secondary fw-bold border-white
                     bg-white">
                         Book ⟶
                     </a>
@@ -223,13 +249,13 @@
             <ul>
                 <li><strong>Fees:</strong> 6.95% + £0.59/ticket + £34.99 </li>
                 <li>They e-mail tickets to attendees</li>
-                <li>You check in attendees with their <a href="https://play.google.com/store/apps/details?id=com.eventbrite.organizer&hl=en&gl=US">app</a></li>
+                <li>You check in attendees with their <a
+                        href="https://play.google.com/store/apps/details?id=com.eventbrite.organizer&hl=en&gl=US">app</a>
+                </li>
             </ul>
             <div class="row align-items-center p-2">
                 <div class="col">
-                    <a
-                    href="https://www.eventbrite.com/e/test-event-tickets-783407642347"
-                    class="btn btn-lg btn-secondary fw-bold border-white
+                    <a href="https://www.eventbrite.com/e/test-event-tickets-783407642347" class="btn btn-lg btn-secondary fw-bold border-white
                     bg-white">
                         Book ⟶
                     </a>
@@ -253,11 +279,14 @@
             <ul>
                 <li><strong>Fees:</strong> Stripe + $0.25-$0.65/ticket </li>
                 <li>They e-mail tickets to attendees</li>
-                <li>You check in attendees with their <a href="https://play.google.com/store/apps/details?id=com.tickettailor.checkinapp&hl=en_GB&gl=US">app</a></li>
+                <li>You check in attendees with their <a
+                        href="https://play.google.com/store/apps/details?id=com.tickettailor.checkinapp&hl=en_GB&gl=US">app</a>
+                </li>
             </ul>
             <div class="row align-items-center p-2">
                 <div class="col">
-                    <a href="https://buytickets.at/tekne/1101984" class="btn btn-lg btn-secondary fw-bold border-white bg-white">
+                    <a href="https://buytickets.at/tekne/1101984"
+                        class="btn btn-lg btn-secondary fw-bold border-white bg-white">
                         Book ⟶
                     </a>
                 </div>
@@ -281,14 +310,15 @@
             </p>
             <ul>
                 <li><strong>Fees:</strong> 3.5% (min £0.4)</li>
-                <li>They e-mail <a href="fienta-test-event-email-printed.pdf">tickets</a> + <a href="fienta-test-event-ticket.pdf">PDFs</a></li>
-                <li>You check in attendees with their <a href="https://play.google.com/store/apps/details?id=com.piletimasin.piletimasin&hl=en_GB&gl=US">app</a></li>
+                <li>They e-mail <a href="fienta-test-event-email-printed.pdf">tickets</a> + <a
+                        href="fienta-test-event-ticket.pdf">PDFs</a></li>
+                <li>You check in attendees with their <a
+                        href="https://play.google.com/store/apps/details?id=com.piletimasin.piletimasin&hl=en_GB&gl=US">app</a>
+                </li>
             </ul>
             <div class="row align-items-center p-2">
                 <div class="col">
-                    <a
-                    href="https://fienta.com/test-event-43794"
-                    class="btn btn-lg btn-secondary fw-bold border-white
+                    <a href="https://fienta.com/test-event-43794" class="btn btn-lg btn-secondary fw-bold border-white
                     bg-white">
                         Book ⟶
                     </a>
@@ -312,13 +342,13 @@
             <ul>
                 <li><strong>Fees:</strong> Stripe + 1.75% + £0.99/ticket</li>
                 <li>They e-mail tickets to attendees</li>
-                <li>You check in attendees with their <a href="https://play.google.com/store/apps/details?id=com.ksolves.promosuite&hl=en&gl=US">app</a></li>
+                <li>You check in attendees with their <a
+                        href="https://play.google.com/store/apps/details?id=com.ksolves.promosuite&hl=en&gl=US">app</a>
+                </li>
             </ul>
             <div class="row align-items-center p-2">
                 <div class="col">
-                    <a
-                    href="https://app.promotix.com/events/details/Test-Event-tickets-104"
-                    class="btn btn-lg btn-secondary fw-bold border-white
+                    <a href="https://app.promotix.com/events/details/Test-Event-tickets-104" class="btn btn-lg btn-secondary fw-bold border-white
                     bg-white">
                         Book ⟶
                     </a>
@@ -342,11 +372,12 @@
             <ul>
                 <li><strong>Fees:</strong> Stripe (using Amazon SES free)</li>
                 <li><em>You</em> e-mail tickets to attendees</li>
-                <li>You check in attendees with a sheet</li>
+                <li>You check in attendees with a custom implementation</li>
             </ul>
             <div class="row align-items-center p-2">
                 <div class="col">
-                    <a href="https://book.stripe.com/5kA28cdNEdSC5ZS6op" class="btn btn-lg btn-secondary fw-bold border-white bg-white">
+                    <a href="https://book.stripe.com/5kA28cdNEdSC5ZS6op"
+                        class="btn btn-lg btn-secondary fw-bold border-white bg-white">
                         Book ⟶
                     </a>
                 </div>
