@@ -22,19 +22,24 @@
     <script>
         function handleCredentialResponse(response) {
             console.log("Encoded JWT ID token: " + response.credential);
+            console.log("Signed in by: " + response.select_by);
+            //TODO: replace with signout button/change account/etc
+            signin_button = document.getElementById("googleSigninButtonDiv");
+            signin_button.style.display = "none";
         }
 
         window.onload = function () {
             google.accounts.id.initialize({
                 client_id: "1062752798740-gjba79mi7bnh6jm58kdeffl7cjj21af0.apps.googleusercontent.com",
-                callback: handleCredentialResponse
+                callback: handleCredentialResponse,
+                auto_select: "true",
             });
             google.accounts.id.renderButton(
                 document.getElementById("googleSigninButtonDiv"),
                 // Customization attributes
                 { theme: "filled_black", size: "large", shape: "pill", text: "signin" }
             );
-            // google.accounts.id.prompt(); // also display the One Tap dialog
+            google.accounts.id.prompt(); // also display the One Tap dialog
         }
     </script>
 </head>
